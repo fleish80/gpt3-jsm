@@ -7,8 +7,10 @@
       "projectType": "application",
       "targets": {
         "build": {
-          "executor": "@nrwl/web:build",
-          "outputs": ["{options.outputPath}"],
+          "executor": "@nrwl/webpack:webpack",
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/main",
             "index": "apps/main/src/index.html",
@@ -16,7 +18,10 @@
             "main": "apps/main/src/main.tsx",
             "polyfills": "apps/main/src/polyfills.ts",
             "tsConfig": "apps/main/tsconfig.app.json",
-            "assets": ["apps/main/src/favicon.ico", "apps/main/src/assets"],
+            "assets": [
+              "apps/main/src/favicon.ico",
+              "apps/main/src/assets"
+            ],
             "styles": [],
             "scripts": [],
             "webpackConfig": "@nrwl/react/plugins/webpack"
@@ -47,7 +52,7 @@
           }
         },
         "serve": {
-          "executor": "@nrwl/web:dev-server",
+          "executor": "@nrwl/webpack:dev-server",
           "options": {
             "buildTarget": "main:build",
             "hmr": true
@@ -56,25 +61,36 @@
             "production": {
               "buildTarget": "main:build:production",
               "hmr": false
+            },
+            "development": {
+              "buildTarget": "main:build:development"
             }
-          }
+          },
+          "defaultConfiguration": "development"
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
+          "outputs": [
+            "{options.outputFile}"
+          ],
           "options": {
-            "lintFilePatterns": ["apps/main/**/*.{ts,tsx,js,jsx}"]
+            "lintFilePatterns": [
+              "apps/main/**/*.{ts,tsx,js,jsx}"
+            ]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/main"],
+          "outputs": [
+            "{workspaceRoot}/coverage/apps/main"
+          ],
           "options": {
-            "jestConfig": "apps/main/jest.config.js",
+            "jestConfig": "apps/main/jest.config.ts",
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "main-e2e": {
       "root": "apps/main-e2e",
@@ -96,32 +112,21 @@
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
+          "outputs": [
+            "{options.outputFile}"
+          ],
           "options": {
-            "lintFilePatterns": ["apps/main-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/main-e2e/**/*.{js,ts}"
+            ]
           }
         }
-      }
+      },
+      "tags": [],
+      "implicitDependencies": [
+        "main"
+      ]
     }
   },
-  "cli": {
-    "defaultCollection": "@nrwl/react"
-  },
-  "generators": {
-    "@nrwl/react": {
-      "application": {
-        "style": "styled-jsx",
-        "linter": "eslint",
-        "babel": true
-      },
-      "component": {
-        "style": "styled-jsx"
-      },
-      "library": {
-        "style": "styled-jsx",
-        "linter": "eslint"
-      }
-    }
-  },
-  "defaultProject": "main"
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }
