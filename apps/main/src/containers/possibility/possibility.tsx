@@ -6,12 +6,12 @@ const StyledMain = styled.div`
   color: palevioletred;
 `;
 
-const Article =() => {
+const Possibility =() => {
   return (
     <StyledMain>
-      Article
+      Possibility
     </StyledMain>
   );
 }
 
-export default Article;
+export default Possibility;

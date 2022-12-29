@@ -6,12 +6,12 @@ const StyledMain = styled.div`
   color: palevioletred;
 `;
 
-const Article =() => {
+const Navbar =() => {
   return (
     <StyledMain>
-      Article
+      Navbar
     </StyledMain>
   );
 }
 
-export default Article;
+export default Navbar;

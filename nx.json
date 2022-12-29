@@ -22,15 +22,16 @@
   "generators": {
     "@nrwl/react": {
       "application": {
-        "style": "styled-jsx",
+        "style": "styled-components",
         "linter": "eslint",
+        "bundler": "webpack",
         "babel": true
       },
       "component": {
-        "style": "styled-jsx"
+        "style": "styled-components"
       },
       "library": {
-        "style": "styled-jsx",
+        "style": "styled-components",
         "linter": "eslint"
       }
     }

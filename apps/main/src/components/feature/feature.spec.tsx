@@ -1,10 +1,10 @@
 import {render} from '@testing-library/react';
 
-import Article from './article';
+import Feature from './feature';
 
-describe('Article', () => {
+describe(Feature.name, () => {
   it('should render successfully', () => {
-    const {baseElement} = render(<Article/>);
+    const {baseElement} = render(<Feature/>);
     expect(baseElement).toBeTruthy();
   });
 });

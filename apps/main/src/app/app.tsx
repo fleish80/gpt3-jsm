@@ -1,11 +1,29 @@
-import Article from '../components/article/article';
+import {Brand, Navbar} from '../components';
+import {Blog, Features, Footer, Header, Possibility, WhatGpt3} from '../containers';
+import styled from 'styled-components';
+import GlobalStyle from './global-style';
 
-const App = () =>{
+const AppDiv = styled.div`
+  font-size: 1.5em;
+  color: palevioletred;
+
+`;
+
+const App = () => {
   return (
-    <div>
-      <h1>GPT-3</h1>
-      <Article></Article>
-    </div>
+    <AppDiv>
+      <GlobalStyle/>
+      <div className="gradient-bg">
+        <Navbar/>
+        <Header/>
+      </div>
+      <Brand/>
+      <WhatGpt3/>
+      <Features/>
+      <Possibility/>
+      <Blog/>
+      <Footer/>
+    </AppDiv>
   )
 }
 

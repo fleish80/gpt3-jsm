@@ -1,10 +1,10 @@
 import {render} from '@testing-library/react';
 
-import Article from './article';
+import Cta from './cta';
 
-describe('Article', () => {
+describe(Cta.name, () => {
   it('should render successfully', () => {
-    const {baseElement} = render(<Article/>);
+    const {baseElement} = render(<Cta/>);
     expect(baseElement).toBeTruthy();
   });
 });
