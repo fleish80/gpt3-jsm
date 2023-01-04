@@ -21,7 +21,7 @@ const NavbarStyled = styled.div`
     }
   }
 
-  .gpt3-navbar-links_container {
+  .gpt3-navbar-links-container {
     display: flex;
     flex-direction: row;
   }
@@ -32,9 +32,9 @@ const NavbarStyled = styled.div`
     align-items: center;
   }
 
-  .gpt3-navbar-links_container p,
+  .gpt3-navbar-links-container p,
   .gpt3-navbar-sign p,
-  .gpt3-navbar-menu_container p {
+  .gpt3-navbar-menu-container p {
     color: #fff;
     font-family: var(--font-family);
     font-weight: 500;
@@ -47,7 +47,7 @@ const NavbarStyled = styled.div`
   }
 
   .gpt3-navbar-sign button,
-  .gpt3-navbar-menu_container button {
+  .gpt3-navbar-menu-container button {
     padding: 0.5rem 1rem;
     color: #fff;
     background: #FF4820;
@@ -87,7 +87,7 @@ const NavbarStyled = styled.div`
     margin-top: 1rem;
     min-width: 210px;
     border-radius: 5px;
-    box-shadow: 0px 0px 5px rgba(0,0, 0,0.2);
+    box-shadow: 0 0 5px rgba(0,0, 0,0.2);
   }
 
   .gpt3-navbar-menu-container p {
@@ -98,7 +98,7 @@ const NavbarStyled = styled.div`
     display: none;
   }
 
-  @media screen and (max-width: 1050px) {
+  @media screen and (width <= 1050px) {
     .gpt3-navbar-links-container {
       display: none;
     }
@@ -108,13 +108,13 @@ const NavbarStyled = styled.div`
     }
   }
 
-  @media screen and (max-width: 700px) {
+  @media screen and (width <= 700px) {
     .gpt3-navbar {
       padding: 2rem 4rem;
     }
   }
 
-  @media screen and (max-width: 550px) {
+  @media screen and (width <= 550px) {
     .gpt3-navbar {
       padding: 2rem;
     }

@@ -1,24 +1,51 @@
-import React from 'react';
-import styled from 'styled-components';
-import {RiMenu3Line, RiCloseLine} from 'react-icons/all';
+import React, {useState} from 'react';
+import {RiCloseLine, RiMenu3Line} from 'react-icons/ri';
 import logo from '../../assets/logo.svg';
 import NavbarStyled from './navbar.styled';
 
+const Menu = () =>
+  (<>
+    <p><a href="#home">Home</a></p>
+    <p><a href="#wpt3">What is GPT3</a></p>
+    <p><a href="#possibility">Open Ai</a></p>
+    <p><a href="#feature">Case Studies</a></p>
+    <p><a href="#blog">Library</a></p>
+  </>)
+
+
 const Navbar = () => {
+
+  const [toggleMenu, setToggleMenu] = useState(false);
+
   return (
-    <NavbarStyled>
+    <NavbarStyled className="gpt3__header section__padding">
       <div className="gpt3-navbar-links">
         <div className="gpt3-navbar-links-logo">
           <img src={logo} alt="logo"/>
         </div>
         <div className="gpt3-navbar-links-container">
-          <p><a href="#home">Home</a></p>
-          <p><a href="#wpt3">What is GPT3</a></p>
-          <p><a href="#possibility">Open Ai</a></p>
-          <p><a href="#feature">Case Studies</a></p>
-          <p><a href="#blog">Library</a></p>
-
+          <Menu/>
         </div>
+      </div>
+      <div className="gpt3-navbar-sign">
+        <p>Sign in</p>
+        <button type="button">Sign Up</button>
+      </div>
+      <div className="gpt3-navbar-menu">
+        {toggleMenu
+          ? <RiCloseLine color="#fff" size={27} onClick={() => setToggleMenu(false)}/>
+          : <RiMenu3Line color="#fff" size={27} onClick={() => setToggleMenu(true)}/>}
+        {toggleMenu && (
+          <div className="gpt3-navbar-menu-container scale-up-center">
+            <div className="gpt3-navbar-menu-container-links">
+              <Menu/>
+            </div>
+            <div className="gpt3-navbar-menu-container-links-sign">
+              <p>Sign in</p>
+              <button type="button">Sign up</button>
+            </div>
+          </div>
+        )}
       </div>
     </NavbarStyled>
   );
