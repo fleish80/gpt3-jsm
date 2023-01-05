@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 
 const HeaderStyled = styled.div`
-  & .gpt3-header {
-    display: flex;
-    flex-direction: row;
-  }
+
+  display: flex;
+  flex-direction: row;
 
   .gpt3-header-content {
     flex: 1;
@@ -117,9 +116,7 @@ const HeaderStyled = styled.div`
   }
 
   @media screen and (max-width: 1050px) {
-    .gpt3-header {
-      flex-direction: column;
-    }
+    flex-direction: column;
 
     .gpt3-header-content {
       margin: 0 0 3rem;
